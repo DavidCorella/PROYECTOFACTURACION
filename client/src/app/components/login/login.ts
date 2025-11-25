@@ -1,12 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-login',
-  templateUrl: 'client\src\app\components\login\login.html',
-  styleUrls: ['./login.component.css']
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatProgressSpinnerModule
+  ],
+  templateUrl: './login.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -14,7 +28,11 @@ export class LoginComponent implements OnInit {
   msg: string = '';
   loading = false;
 
-  constructor(private router: Router, private fb: FormBuilder, private _snackbar: MatSnackBar) {
+  constructor(
+    private router: Router, 
+    private fb: FormBuilder, 
+    private _snackbar: MatSnackBar
+  ) {
     this.form = this.fb.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required]
