@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturas - Sistema de Facturación</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-titulo">Laboratorio 24Nov</div>
+    <div class="navbar-menu">
+      <a href="facturas.html">Facturas</a>
+      <span id="navbarUsuario"></span>
+      <button id="btnLogout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Facturas</h1>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn-primary" id="btnAgregar">Agregar Factura</button>
+    </div>
+
+    <div class="filtro-container">
+      <input type="text" id="inputFiltro" placeholder="Buscar factura...">
+    </div>
+
+    <div class="tabla-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Núm. Factura</th>
+            <th>Nombre Cliente</th>
+            <th>Dirección Cliente</th>
+            <th>Teléfono Cliente</th>
+            <th style="text-align: right;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyFacturas">
+          <tr>
+            <td colspan="5" style="text-align: center;">Cargando...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

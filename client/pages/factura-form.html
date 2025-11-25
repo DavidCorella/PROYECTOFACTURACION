@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Factura - Sistema de Facturación</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-titulo">Laboratorio 24Nov</div>
+    <div class="navbar-menu">
+      <a href="facturas.html">Facturas</a>
+      <span id="navbarUsuario"></span>
+      <button id="btnLogout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1 id="tituloFormulario">Crear factura</h1>
+    </div>
+
+    <div style="background: white; padding: 2rem; border-radius: 8px; max-width: 600px;">
+      <form id="formFactura">
+        <div class="form-group">
+          <label for="numFactura">Número de factura *</label>
+          <input type="number" id="numFactura" name="numFactura" placeholder="9999" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nomCliente">Nombre del cliente *</label>
+          <input type="text" id="nomCliente" name="nomCliente" placeholder="Nombre completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dirCliente">Dirección del cliente *</label>
+          <input type="text" id="dirCliente" name="dirCliente" placeholder="Dirección exacta" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telCliente">Teléfono del cliente *</label>
+          <input type="tel" id="telCliente" name="telCliente" placeholder="99999999" required>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+          <button type="button" class="btn btn-danger" id="btnRegresar">Regresar</button>
+          <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar factura</button>
+          <button type="submit" class="btn btn-primary" id="btnModificar" style="display:none;">Modificar factura</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
